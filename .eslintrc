@@ -1,0 +1,36 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "jest": true
+  },
+  "plugins": [
+    "flowtype",
+    "react"
+  ],
+  "globals": {
+    "google": false,
+    "Dispatch": false
+  },
+  "rules": {
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": 0,
+    "react/jsx-filename-extension": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": 0
+  },
+  "settings": {
+    "import/parser": "babel-eslint",
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.js"
+      }
+    },
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    }
+  }
+}

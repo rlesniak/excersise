@@ -1,0 +1,49 @@
+{
+  "env": {
+    "production": {
+      "presets": [
+        [
+          "env",
+          {
+            "modules": false,
+            "targets": {
+              "chrome": "40"
+            }
+          }
+        ],
+        "react",
+        "stage-0"
+      ]
+    },
+    "development": {
+      "presets": [
+        [
+          "env",
+          {
+            "modules": false,
+            "targets": {
+              "chrome": "60"
+            }
+          }
+        ],
+        "react",
+        "stage-0"
+      ]
+    },
+    "test": {
+      "presets": [["env"], "react", "stage-0"],
+      "plugins": [
+        [
+          "module-alias",
+          [
+            { "src": "./src/components", "expose": "Components" },
+            { "src": "./src/modules", "expose": "Modules" },
+            { "src": "./src/containers", "expose": "Containers" },
+            { "src": "./src/utils", "expose": "Utils" }
+          ]
+        ]
+      ]
+    }
+  },
+  "sourceMaps": true
+}

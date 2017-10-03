@@ -1,0 +1,25 @@
+[ignore]
+dist/
+<PROJECT_ROOT>/node_modules/eslint-plugin-jsx-a11y/*
+
+[libs]
+flow-typed/app
+
+[options]
+module.file_ext=.js
+module.file_ext=.css
+module.file_ext=.scss
+
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=src
+
+module.name_mapper='^Components\/\(.*\)$' -> '<PROJECT_ROOT>/src/components/\1'
+module.name_mapper='^Containers\/\(.*\)$' -> '<PROJECT_ROOT>/src/containers/\1'
+module.name_mapper='^Modules\/\(.*\)$' -> '<PROJECT_ROOT>/src/modules/\1'
+module.name_mapper='^Store\/\(.*\)$' -> '<PROJECT_ROOT>/src/store/\1'
+module.name_mapper='^Utils\/\(.*\)$' -> '<PROJECT_ROOT>/src/utils/\1'
+module.system=haste
+
+suppress_comment=\\(.\\|\n\\)*\\$FlowIssue
+esproposal.class_static_fields=enable
+esproposal.class_instance_fields=enable
