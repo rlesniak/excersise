@@ -5,5 +5,3 @@
  */
 
 import { createSelector } from 'reselect';
-import { List } from 'immutable';
-import { get } from 'lodash';
