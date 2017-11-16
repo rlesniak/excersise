@@ -14,9 +14,5 @@ import rootReducer from 'Modules/App/reducer';
  * Creates application store based on passed arguments.
  * @returns {Object} Redux store.
  */
-export default (): Object => createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(
-    thunk,
-  )),
-);
+export default (): Object =>
+  createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));

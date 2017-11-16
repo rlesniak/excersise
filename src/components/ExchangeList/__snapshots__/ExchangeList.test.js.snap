@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ExchangeList /> should render different currency 1`] = `
+<div
+  className="currency-list"
+>
+  <h3>
+    1 
+    PLN
+     is equal:
+  </h3>
+  <withHandlers(CurrencyItem)
+    key="0"
+    name="USD"
+    value="1.22zł"
+  />
+  <withHandlers(CurrencyItem)
+    key="1"
+    name="PLN"
+    value="0.43zł"
+  />
+  <withHandlers(CurrencyItem)
+    key="2"
+    name="BTC"
+    value="0.00zł"
+  />
+</div>
+`;
+
+exports[`<ExchangeList /> should render without crash 1`] = `
+<div
+  className="currency-list"
+>
+  <h3>
+    1 
+    USD
+     is equal:
+  </h3>
+  <withHandlers(CurrencyItem)
+    key="0"
+    name="USD"
+    value="1.22$"
+  />
+  <withHandlers(CurrencyItem)
+    key="1"
+    name="PLN"
+    value="0.43$"
+  />
+  <withHandlers(CurrencyItem)
+    key="2"
+    name="BTC"
+    value="0.00$"
+  />
+</div>
+`;

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PlainCurrencyItem /> should have optional classes 1`] = `
+<div
+  className="currency-item currency-item--selected currency-item--clickable"
+  onClick={[Function]}
+  title="Dollar"
+>
+  <b>
+    USD
+  </b>
+  : 
+  <br />
+   
+  Dollar
+</div>
+`;
+
+exports[`<PlainCurrencyItem /> should render without crash 1`] = `
+<div
+  className="currency-item"
+  onClick={[Function]}
+  title="Dollar"
+>
+  <b>
+    USD
+  </b>
+  : 
+  <br />
+   
+  Dollar
+</div>
+`;

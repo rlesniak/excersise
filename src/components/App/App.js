@@ -4,9 +4,13 @@ import * as React from 'react';
 
 import Forex from 'Containers/Forex';
 
+import './App.scss';
+
 const App = (): React.Node => (
   <div className="app">
-    <Forex />
+    <div className="app__root">
+      <Forex />
+    </div>
   </div>
 );
 

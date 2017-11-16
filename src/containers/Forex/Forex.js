@@ -1,29 +1,25 @@
 /* @flow */
 /**
- * Travel plan container.
  * @copyright (c) 2017-present rafallesniak24@gmail.com
  */
 
 import { connect } from 'react-redux';
 
 import Forex from 'Components/Forex';
-import { fetchData } from 'Modules/App/actions';
+import { fetchCurrencies } from 'Modules/App/actions';
 
-import type { Map } from 'immutable';
 import type { StateType } from 'Modules/App/types';
 
-export type ComponentPropsType = {
-  currencies: Map<string, number>,
-  isFetching: boolean,
-};
-
 const mapStateToProps = (state: StateType) => ({
+  currentCurrency: state.activeCurrency,
   currencies: state.currenciesList,
-  isFetching: state.isDataFetching,
+  favourites: state.favoriteCurrencies,
+  exchanges: state.exchangesList,
+  fetchingList: state.dataFetching,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<*>) => () => ({
-  getData: () => dispatch(fetchData()),
+  fetchCurrencies: () => dispatch(fetchCurrencies()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Forex);

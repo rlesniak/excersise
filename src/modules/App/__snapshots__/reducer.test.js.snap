@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App reducer should create proper SET_CURRENCIES action 1`] = `
+Object {
+  "activeCurrency": "USD",
+  "currenciesList": Immutable.OrderedMap {
+    "AED": "test",
+    "BYC": "test1",
+    "BTC": "test2",
+    "USD": "test3",
+    "PLN": "test4",
+  },
+  "dataFetching": Immutable.Map {},
+  "exchangesList": Immutable.Map {},
+  "favoriteCurrencies": Immutable.List [],
+}
+`;
+
+exports[`App reducer should create proper SET_EXCHANGES action 1`] = `
+Object {
+  "activeCurrency": "USD",
+  "currenciesList": Immutable.Map {},
+  "dataFetching": Immutable.Map {},
+  "exchangesList": Immutable.OrderedMap {
+    "BYC": 1.23,
+    "BTC": 0.32,
+    "PLN": 0,
+  },
+  "favoriteCurrencies": Immutable.List [],
+}
+`;
+
+exports[`App reducer should create proper SET_FETCHING action 1`] = `
+Object {
+  "activeCurrency": "USD",
+  "currenciesList": Immutable.Map {},
+  "dataFetching": Immutable.Map {
+    "currencies": true,
+  },
+  "exchangesList": Immutable.Map {},
+  "favoriteCurrencies": Immutable.List [],
+}
+`;
+
+exports[`App reducer should create proper UNSET_FETCHING action 1`] = `
+Object {
+  "activeCurrency": "USD",
+  "currenciesList": Immutable.Map {},
+  "dataFetching": Immutable.Map {
+    "currencies": false,
+  },
+  "exchangesList": Immutable.Map {},
+  "favoriteCurrencies": Immutable.List [],
+}
+`;
+
+exports[`App reducer should return proper initial state 1`] = `
+Object {
+  "activeCurrency": "USD",
+  "currenciesList": Immutable.Map {},
+  "dataFetching": Immutable.Map {},
+  "exchangesList": Immutable.Map {},
+  "favoriteCurrencies": Immutable.List [],
+}
+`;

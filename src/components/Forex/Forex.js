@@ -1,17 +1,56 @@
 // @flow
 
 import * as React from 'react';
+import { Spinner } from '@blueprintjs/core';
 
-import type { ComponentPropsType } from 'Containers/Forex/Forex';
+import type { Map } from 'immutable';
 
-const Forex = (props): React.Node => (
-  <div className="forex">
-    <button onClick={() => getData()}>Get</button>
-    <nav className="forex__menu">
-      {currencies.keySeq().toArray().map(k => <div>{k}</div>)}
-      {isFetching ? 'Loading' : ''}
-    </nav>
+import CurrencySelector from 'Containers/CurrencySelector';
+import ExchangeList from 'Components/ExchangeList';
+
+import './Forex.scss';
+
+type PropsType = {
+  currentCurrency: string,
+  exchanges: Map<string, number>,
+  fetchingList: Map<string, boolean>,
+  fetchCurrencies: () => void,
+};
+
+const ForexSpinner = () => (
+  <div className="forex__spinner">
+    <Spinner />
   </div>
 );
+
+class Forex extends React.Component<PropsType> {
+  componentDidMount() {
+    this.props.fetchCurrencies();
+  }
+
+  render() {
+    const { exchanges, fetchingList, currentCurrency } = this.props;
+
+    if (fetchingList.get('currencies')) {
+      return <ForexSpinner />;
+    }
+
+    return (
+      <div className="forex">
+        <CurrencySelector />
+        <div className="forex__list">
+          {fetchingList.get('exchanges') ? (
+            <ForexSpinner />
+          ) : (
+            <ExchangeList
+              currentCurrency={currentCurrency}
+              exchangeList={exchanges}
+            />
+          )}
+        </div>
+      </div>
+    );
+  }
+}
 
 export default Forex;

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should render without crash 1`] = `
+<div
+  className="app"
+>
+  <div
+    className="app__root"
+  >
+    <Connect(Forex) />
+  </div>
+</div>
+`;

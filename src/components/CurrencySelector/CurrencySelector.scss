@@ -1,0 +1,10 @@
+.currency-selector {
+  border-bottom: 1px solid #a6b6c1;
+  padding-bottom: 20px;
+
+  &__list {
+    max-height: 300px;
+    overflow: auto;
+    margin-bottom: 20px;
+  }
+}
